@@ -9,8 +9,19 @@ const AppLayout = ({ children }) => {
 
     return (
         <>
-            <HeaderMenu />
-            { children }
+            <div>
+                <Row gutter={8}>
+                    <Col xs={24} md={6}>
+
+                    </Col>
+                    <Col xs={24} md={12}>
+                        {children}
+                    </Col>
+                    <Col xs={24} md={6}>
+                        <Login />
+                    </Col>
+                </Row>
+            </div>
         </>
     );
 }

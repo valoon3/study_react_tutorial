@@ -15,7 +15,6 @@ const HeaderMenu = () => {
                     style={{verticalAlign: 'middle'}}
                 />
             </div>, "3"),
-        getItem(<Link href="/"><a>회원가입</a></Link>, "4"),
         ];
 
     // 검색 액션
