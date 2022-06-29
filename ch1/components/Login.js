@@ -2,8 +2,10 @@ import {useCallback, useState} from "react";
 import {Avatar, Button, Card, Checkbox, Form, Input} from "antd";
 import Link from "next/link";
 import styled from 'styled-components';
+import {useDispatch} from "react-redux";
 
 const Login = (isLoggedIn) => {
+    const dispatch = useDispatch();
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
     let [loggedIn, setLoggedIn] = useState(false);

@@ -1,5 +1,6 @@
 import {createWrapper} from "next-redux-wrapper";
 import {createStore} from "redux";
+import reducer from '../reducers'
 
 // _app.js 에 사용한다.
 // export defualt wrapper.withRedux(NodeBird); <- 이런식으로 감싸준다.
