@@ -1,11 +1,15 @@
 import {createWrapper} from "next-redux-wrapper";
-import {createStore} from "redux";
+import {createStore, applyMiddleware, compose} from "redux";
 import reducer from '../reducers'
+import {composeWithDevTools} from "redux-devtools-extension";
 
 // _app.js 에 사용한다.
 // export defualt wrapper.withRedux(NodeBird); <- 이런식으로 감싸준다.
 const configureStore = () => {
-    const store = createStore(reducer);
+    const middlewares = [];
+    const enhancer = process.env.NODE_ENV === 'production' ? compose(applyMiddleware(...middlewares)) : composeWithDevTools(applyMiddleware(...middlewares));
+    const store = createStore(reducer, enhancer);
+
     return store;
 }
 

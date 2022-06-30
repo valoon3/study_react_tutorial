@@ -33,7 +33,8 @@ const rootReducer = (state = initialState, action) => {
                     user: action.data,
                 }
             }
-        default: return state;
+        default:
+            return state;
     }
 }
 
