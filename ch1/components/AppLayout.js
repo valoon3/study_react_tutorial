@@ -8,14 +8,15 @@ import Login from "./Login";
 const AppLayout = ({ children }) => {
     console.log('/components/AppLayout');
 
-    const isLoggedIn = useSelector(state => state.user.isLoggedIn);
+    const {isLoggedIn} = useSelector(state => state.user.isLoggedIn);
+    console.log(isLoggedIn);
 
     return (
         <>
             <div>
                 <Row gutter={8}>
                     <Col xs={24} md={6}>
-                        {isLoggedIn.toString()}
+                        {isLoggedIn}
                     </Col>
                     <Col xs={24} md={12}>
                         {children}
