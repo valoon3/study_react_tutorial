@@ -23,9 +23,9 @@ const App = ({ Component }) => {
     )
 }
 
-App.propTypes = {
-    Component: PropTypes.elementType.isRequired,
-}
+// App.propTypes = {
+//     Component: PropTypes.elementType.isRequired,
+// }
 
 module.exports = wrapper.withRedux(App);
 // module.exports wrapper.withRedux(App); // 원래는 Provider 로 감싸서 store을 최상위에 깔아줬는데 6version 부터는 안해도된다.

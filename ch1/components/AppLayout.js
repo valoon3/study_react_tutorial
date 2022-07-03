@@ -8,7 +8,7 @@ import Login from "./Login";
 const AppLayout = ({ children }) => {
     console.log('/components/AppLayout');
 
-    const {isLoggedIn} = useSelector(state => state.user.isLoggedIn);
+    const isLoggedIn = useSelector(state => state.user.inLoggedIn);
     console.log(isLoggedIn);
 
     return (

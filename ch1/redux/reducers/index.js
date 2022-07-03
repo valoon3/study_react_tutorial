@@ -41,15 +41,15 @@ export const loginAction = data => {
 // }
 
 const rootReducer = combineReducers({
-    index: (state = {}, action) => { // HYDRATE를 위한 index
-        switch (action.type) {
-            case HYDRATE:
-                console.log(HYDRATE);
-                return {...state, ...action.payload}
-            default:
-                return state;
-        }
-    },
+    // index: (state = {}, action) => { // HYDRATE를 위한 index
+    //     switch (action.type) {
+    //         case HYDRATE:
+    //             console.log(HYDRATE);
+    //             return {...state, ...action.payload}
+    //         default:
+    //             return state;
+    //     }
+    // },
     user,
 });
 
