@@ -10,13 +10,19 @@ const AppLayout = ({ children }) => {
 
     const isLoggedIn = useSelector(state => state.user.inLoggedIn);
     console.log(isLoggedIn);
+    // loginForm.js 에서
+    // const onSubmitForm useCallback(() => {
+    //     dispatch(loginAction({ id, password});
+    // }, [id, password]);
+    // 사용은 <FormWrapper onFinish={onSubmitForm}>    이런 식으로 사용한다.
+
 
     return (
         <>
             <div>
                 <Row gutter={8}>
                     <Col xs={24} md={6}>
-                        {isLoggedIn}
+                        {isLoggedIn.toString()}
                     </Col>
                     <Col xs={24} md={12}>
                         {children}
