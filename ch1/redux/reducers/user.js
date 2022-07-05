@@ -1,25 +1,42 @@
 
 
 export const initialState = {
-    inLoggedIn: false,
-    user: null,
+    isLoggedIn: false,
+    user: {
+        userId: '',
+        userPassword: '',
+    },
     signUpData: {},
     loginData: {},
 }
 
-export const loginAction = (data) => {
+export const loginAction = () => {
     return {
         type: 'LOG_IN',
-        data,
+        isLoggedIn : true,
     }
 };
+
+export const logoutAction = () => {
+    return {
+        type: 'LOG_OUT',
+        isLoggedIn: false,
+    }
+}
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'LOG_IN':
-            return{
+            console.log(state);
+            return {
                 ...state,
-                isLoggedIn: false,
+                isLoggedIn: action.isLoggedIn,
+            }
+        case 'LOG_OUT':
+            console.log(state);
+            return {
+                ...state,
+                isLoggedIn: action.isLoggedIn,
             }
         default:
             return state;
