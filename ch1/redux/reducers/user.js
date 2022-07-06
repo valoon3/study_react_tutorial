@@ -2,7 +2,7 @@
 
 export const initialState = {
     isLoggedIn: false,
-    user: {
+    userInfo: {
         userId: '',
         userPassword: '',
     },
@@ -10,10 +10,11 @@ export const initialState = {
     loginData: {},
 }
 
-export const loginAction = () => {
+export const loginAction = (data) => {
     return {
         type: 'LOG_IN',
         isLoggedIn : true,
+        userInfo: data,
     }
 };
 
@@ -27,13 +28,15 @@ export const logoutAction = () => {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'LOG_IN':
-            console.log(state);
             return {
                 ...state,
                 isLoggedIn: action.isLoggedIn,
+                userInfo: {
+                    ...state.userInfo,
+                    userId: action.userInfo.userId,
+                }
             }
         case 'LOG_OUT':
-            console.log(state);
             return {
                 ...state,
                 isLoggedIn: action.isLoggedIn,

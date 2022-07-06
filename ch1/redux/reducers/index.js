@@ -1,6 +1,7 @@
 import {HYDRATE} from "next-redux-wrapper";
 import {combineReducers} from "redux"; // 함수를 합쳐야 하기때문에 도움을 받는다.
 import user from './user';
+import boardState from './boardState';
 
 // const initialState = {
 //     user: {
@@ -25,6 +26,7 @@ const rootReducer = combineReducers({
         }
     },
     user,
+    boardState,
 });
 
 export default rootReducer;

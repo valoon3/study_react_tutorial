@@ -2,18 +2,17 @@ import {useDispatch, useSelector} from "react-redux";
 import {Button, Checkbox, Form, Input} from "antd";
 import Link from "next/link";
 import {useCallback, useState} from "react";
-// import {loginAction} from "../redux/reducers";
 import {loginAction} from "../redux/reducers/user";
 
 
-const LogoutForm  = () => {
+const LogoutedForm  = () => {
     const dispatch = useDispatch();
 
     const onLoginFinish = useCallback((userInfo) => {
         console.log('로그인 유저 정보', userInfo);
         // 로그인 성공
-        if (userInfo.userName === 'asdf' && userInfo.password === 'asdf') {
-            dispatch(loginAction());
+        if (userInfo.userId === 'asdf' && userInfo.userPassword === 'asdf') {
+            dispatch(loginAction(userInfo));
         }
         // 로그인 실패
         else {
@@ -41,16 +40,16 @@ const LogoutForm  = () => {
             >
                 <label><b>== Login ==</b></label>
                 <Form.Item
-                    label="Username"
-                    name="userName"
+                    label="UserId"
+                    name="userId"
                     rules={[{required: true, message: 'Please input your username!'}]}
                 >
                     <Input/>
                 </Form.Item>
 
                 <Form.Item
-                    label="Password"
-                    name="password"
+                    label="userPassword"
+                    name="userPassword"
                     rules={[{required: true, message: 'Please input your password!'}]}
                 >
                     <Input.Password/>
@@ -74,4 +73,4 @@ const LogoutForm  = () => {
 
 }
 
-export default LogoutForm;
+export default LogoutedForm;

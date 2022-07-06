@@ -1,9 +1,13 @@
 import { Menu, Input } from 'antd';
 import Link from 'next/link'
 import AppLayout from "./AppLayout";
+import * as path from "path";
 
 const HeaderMenu = () => {
     // 메뉴창 구성
+
+    console.log(__dirname);
+
     const items = [
         getItem(<Link href="/"><a>노드버드</a></Link>, "1"),
         getItem(<Link href="/"><a>프로필</a></Link>, "2"),
@@ -15,6 +19,7 @@ const HeaderMenu = () => {
                     style={{verticalAlign: 'middle'}}
                 />
             </div>, "3"),
+        getItem(<Link href="/bookReview/BookMenu"><a>book review</a></Link>, "4"),
         ];
 
     // 검색 액션
