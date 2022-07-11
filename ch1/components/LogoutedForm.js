@@ -1,8 +1,9 @@
 import {useDispatch, useSelector} from "react-redux";
 import {Button, Checkbox, Form, Input} from "antd";
 import Link from "next/link";
-import {useCallback, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import {loginAction} from "../redux/reducers/user";
+import axios from "axios";
 
 
 const LogoutedForm  = () => {
@@ -10,6 +11,11 @@ const LogoutedForm  = () => {
 
     const onLoginFinish = useCallback((userInfo) => {
         console.log('로그인 유저 정보', userInfo);
+
+        axios.get('http://localhost:8080/login/test')
+            .then((value => console.log(value)))
+            .catch(err => console.error(err));
+
         // 로그인 성공
         if (userInfo.userId === 'asdf' && userInfo.userPassword === 'asdf') {
             dispatch(loginAction(userInfo));
@@ -24,7 +30,12 @@ const LogoutedForm  = () => {
         console.log('login fail');
     }
 
-
+    // useEffect(() =>{
+    //     axios.get('/login/test')
+    //         .then(res => console.log(res))
+    //         .catch(err => console.error(err))
+    //
+    // })
 
     return ( // 로그인 안된 화면
         <div>
