@@ -5,6 +5,7 @@ import {useCallback, useEffect, useState} from "react";
 import {loginAction} from "../redux/reducers/user";
 import axios from "axios";
 
+axios.defaults.baseURL = 'http://localhost:8080'; // baseurl 설정
 
 const LogoutedForm  = () => {
     const dispatch = useDispatch();
@@ -12,7 +13,7 @@ const LogoutedForm  = () => {
     const onLoginFinish = useCallback((userInfo) => {
         console.log('로그인 유저 정보', userInfo);
 
-        axios.get('http://localhost:8080/login/test')
+        axios.get('/login/test')//http://localhost:8080
             .then((value => console.log('result', value)))
             .catch(err => console.error(err));
 
