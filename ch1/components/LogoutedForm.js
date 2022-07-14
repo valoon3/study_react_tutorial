@@ -13,7 +13,7 @@ const LogoutedForm  = () => {
         console.log('로그인 유저 정보', userInfo);
 
         axios.get('http://localhost:8080/login/test')
-            .then((value => console.log(value)))
+            .then((value => console.log('result', value)))
             .catch(err => console.error(err));
 
         // 로그인 성공
