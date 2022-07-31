@@ -13,7 +13,11 @@ const LogoutedForm  = () => {
     const onLoginFinish = useCallback((userInfo) => {
         console.log('로그인 유저 정보', userInfo);
 
-        axios.post('/login')//http://localhost:8080
+        axios.post('/login', JSON.stringify(userInfo),{ //http://localhost:8080
+            headers: {
+                "Content-Type": 'application/json',
+            },
+        })
             .then((value => console.log('result', value)))
             .catch(err => console.error(err));
 
